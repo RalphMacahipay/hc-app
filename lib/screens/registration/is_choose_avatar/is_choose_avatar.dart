@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
+
 import 'package:hc_app_sample/provider/provider_nationality.dart';
 import 'package:provider/provider.dart';
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../how_old_screen/how_old_screen.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+
+import '../../../widgets/logo.dart';
+import '../disclaimer/disclaimer.dart';
+import '../is_username_screen/is_username_screen.dart';
 
 class IsChooseAvatar extends StatelessWidget {
   const IsChooseAvatar({Key? key}) : super(key: key);
@@ -92,7 +94,7 @@ class IsChooseAvatar extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        const AskAgeScreen(),
+                        const IsUserNameScreen(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return FadeTransition(

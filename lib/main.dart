@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/provider/provider.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
-import 'package:hc_app_sample/screens/how_old_screen/how_old_screen.dart';
-import 'package:hc_app_sample/screens/introduction/introduction.dart';
-import 'package:hc_app_sample/screens/is_travel_alone_screen/is_travel_alone_screen.dart';
+
 import 'package:hc_app_sample/screens/registration.dart';
+import 'package:hc_app_sample/screens/registration/disclaimer/disclaimer.dart';
+import 'package:hc_app_sample/screens/registration/how_old_screen/how_old_screen.dart';
+import 'package:hc_app_sample/screens/registration/introduction/introduction.dart';
+import 'package:hc_app_sample/screens/registration/is_travel_alone_screen/is_travel_alone_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'configuration/routes.dart';

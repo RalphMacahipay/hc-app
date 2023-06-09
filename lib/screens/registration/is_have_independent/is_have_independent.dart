@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_pregnant_screen/is_pregnant_screen.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
 
-class IsTravelAloneScreen extends StatelessWidget {
-  const IsTravelAloneScreen({super.key});
+import '../disclaimer/disclaimer.dart';
+import '../is_have_older/is_have_older.dart';
+
+class IsHaveIndependentScreen extends StatelessWidget {
+  const IsHaveIndependentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,12 @@ class IsTravelAloneScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         children: [
           SizedBox(
-            height: SizeConfig.blockY! * 5,
+            height: SizeConfig.blockY! * 2,
           ),
           const Center(
             child: Text(
-              "Are you traveling alone or together with your family?",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              "Are you a single person of 18 years or above with one or more dependent(s), including at least 1 biological or non-biological child?",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
@@ -39,12 +40,12 @@ class IsTravelAloneScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kPersonAndFam,
+              kMotherChild,
               fit: BoxFit.cover,
             ),
           ),
           SizedBox(
-            height: SizeConfig.blockY! * 18,
+            height: SizeConfig.blockY! * 15,
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
@@ -54,7 +55,7 @@ class IsTravelAloneScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsPregnantScreen(),
+                      const IsHaveOlderScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

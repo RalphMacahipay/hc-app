@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import '../../configuration/constant.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../../widgets/text.dart';
+import '../../../configuration/constant.dart';
+import '../../../widgets/text.dart';
+
 import '../introduction/introduction.dart';
+import 'package:hc_app_sample/widgets/buttons.dart';
+
+import '../../../configuration/style.dart';
+import '../../../widgets/logo.dart';
 
 class DisclaimerScreen extends StatelessWidget {
   const DisclaimerScreen({Key? key}) : super(key: key);

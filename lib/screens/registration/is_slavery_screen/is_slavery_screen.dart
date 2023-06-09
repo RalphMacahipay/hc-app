@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_have_independent/is_have_independent.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
 
-class IsPregnantScreen extends StatelessWidget {
-  const IsPregnantScreen({super.key});
+import '../is_nationality_screen/is_nationality_screen.dart';
+
+class IsSlaveryScreen extends StatelessWidget {
+  const IsSlaveryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,8 @@ class IsPregnantScreen extends StatelessWidget {
           ),
           const Center(
             child: Text(
-              "Are you a pregnant woman or a woman who has given birth within the past three months?",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              "Are you a victim of human trafficking or slavery?",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
@@ -39,12 +39,12 @@ class IsPregnantScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kPregnant,
+              kPersonTied,
               fit: BoxFit.cover,
             ),
           ),
           SizedBox(
-            height: SizeConfig.blockY! * 15,
+            height: SizeConfig.blockY! * 10,
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
@@ -54,7 +54,7 @@ class IsPregnantScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsHaveIndependentScreen(),
+                      const IsNationalityScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -76,7 +76,7 @@ class IsPregnantScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const DisclaimerScreen(),
+                      const IsNationalityScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

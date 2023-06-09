@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
-import 'package:hc_app_sample/provider/provider_nationality.dart';
 import 'package:provider/provider.dart';
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_have_wife_screen/is_have_wife_screen.dart';
 
-class IsNationalityScreen extends StatelessWidget {
-  const IsNationalityScreen({Key? key}) : super(key: key);
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../provider/provider_nationality.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
+
+import '../disclaimer/disclaimer.dart';
+import '../is_choose_avatar/is_choose_avatar.dart';
+
+class IsHaveWifeScreen extends StatelessWidget {
+  const IsHaveWifeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class IsNationalityScreen extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "What is your nationality?",
+                "Do you have your wife/husband, child, mother/father, in any of these countries (Dublin III country) and you wish to be reunited with him/her?",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
@@ -91,7 +93,7 @@ class IsNationalityScreen extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        const IsHaveWifeScreen(),
+                        const IsChooseAvatar(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return FadeTransition(

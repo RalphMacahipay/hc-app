@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
+
+import '../disclaimer/disclaimer.dart';
 import '../is_torture_screen/is_torture_screen.dart';
 
 class IsHIVScreen extends StatelessWidget {

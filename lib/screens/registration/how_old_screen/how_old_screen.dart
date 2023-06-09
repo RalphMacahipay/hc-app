@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/size.dart';
 import 'package:hc_app_sample/widgets/buttons.dart';
 
-import '../../configuration/assets.dart';
-import '../../configuration/style.dart';
-import '../../widgets/logo.dart';
+import '../../../configuration/assets.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/logo.dart';
+
 import '../is_travel_alone_screen/is_travel_alone_screen.dart';
 
 class AskAgeScreen extends StatelessWidget {

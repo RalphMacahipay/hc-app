@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_have_older/is_have_older.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
 
-class IsHaveIndependentScreen extends StatelessWidget {
-  const IsHaveIndependentScreen({super.key});
+import '../disclaimer/disclaimer.dart';
+import '../is_shipwreck_screen/is_shipwreck_screen.dart';
+
+class IsSufferScreen extends StatelessWidget {
+  const IsSufferScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class IsHaveIndependentScreen extends StatelessWidget {
           ),
           const Center(
             child: Text(
-              "Are you a single person of 18 years or above with one or more dependent(s), including at least 1 biological or non-biological child?",
+              "Are you suffeing from a physical, mental, intellectual, or sensory disability from birth?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -39,7 +40,7 @@ class IsHaveIndependentScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kMotherChild,
+              kManDisabled,
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +55,7 @@ class IsHaveIndependentScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsHaveOlderScreen(),
+                      const IsShipWreckScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

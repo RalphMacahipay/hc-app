@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_nationality_screen/is_nationality_screen.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/logo.dart';
 
-class IsSlaveryScreen extends StatelessWidget {
-  const IsSlaveryScreen({super.key});
+import '../disclaimer/disclaimer.dart';
+import '../is_have_independent/is_have_independent.dart';
+
+class IsUserNameScreen extends StatelessWidget {
+  const IsUserNameScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,35 +26,36 @@ class IsSlaveryScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         children: [
           SizedBox(
-            height: SizeConfig.blockY! * 2,
+            height: SizeConfig.blockY! * 5,
           ),
           const Center(
             child: Text(
-              "Are you a victim of human trafficking or slavery?",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              "Thank you for your responses!",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
-          CircleAvatar(
-            radius: 150,
-            backgroundColor: kWhite,
-            child: Image.asset(
-              kPersonTied,
-              fit: BoxFit.cover,
-            ),
-          ),
           SizedBox(
-            height: SizeConfig.blockY! * 10,
+            height: SizeConfig.blockY! * 15,
+          ),
+          const Center(
+              child: Text("Please choose your preferred username below")),
+          SizedBox(
+            height: SizeConfig.blockY! * 15,
+          ),
+          const TextField(),
+          SizedBox(
+            height: SizeConfig.blockY! * 15,
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "Yes",
+            kName: "Proceed to Chapter 1",
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsNationalityScreen(),
+                      const IsHaveIndependentScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -69,13 +71,13 @@ class IsSlaveryScreen extends StatelessWidget {
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "No",
+            kName: "Go back to Home Screen",
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsNationalityScreen(),
+                      const DisclaimerScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

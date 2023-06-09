@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
+import 'package:hc_app_sample/widgets/buttons.dart';
+import '../../../configuration/constant.dart';
+import '../../../configuration/routes.dart';
+import '../../../configuration/style.dart';
+import '../../../widgets/logo.dart';
 
-import '../../configuration/routes.dart';
-import '../../configuration/style.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/logo.dart';
-import '../is_slavery_screen/is_slavery_screen.dart';
+import '../disclaimer/disclaimer.dart';
 
-class IsTortureScreen extends StatelessWidget {
-  const IsTortureScreen({super.key});
+import '../how_old_screen/how_old_screen.dart';
+
+class IntroductionPage extends StatelessWidget {
+  final String logoImagePath;
+
+  const IntroductionPage({super.key, required this.logoImagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 40,
+            backgroundColor: kWhite,
+            child: Image.asset(
+              logoImagePath,
+              fit: BoxFit.cover,
+            ),
+          ),
+          // Rest of the introduction page content
+        ],
+      ),
+    );
+  }
+}
+
+class IntroductionScreen extends StatelessWidget {
+  const IntroductionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,36 +53,37 @@ class IsTortureScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         children: [
-          SizedBox(
-            height: SizeConfig.blockY! * 2,
-          ),
           const Center(
             child: Text(
-              "Are you a victim of torture, rape or other forms of psychological, physical, or sexual violence or exploitation?",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+              "Introduction",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
           CircleAvatar(
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kTortureMan,
+              kPersonQuestion,
               fit: BoxFit.cover,
             ),
+          ),
+          const Text(
+            kAsking,
+            style: TextStyle(fontSize: 15),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: SizeConfig.blockY! * 10,
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "Yes",
+            kName: "Confirm",
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsSlaveryScreen(),
+                      const AskAgeScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -70,7 +99,7 @@ class IsTortureScreen extends StatelessWidget {
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "No",
+            kName: "Go back",
             onPressed: () {
               Navigator.pushReplacement(
                 context,
