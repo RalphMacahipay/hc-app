@@ -6,8 +6,8 @@ import '../../../configuration/style.dart';
 import '../../../widgets/buttons.dart';
 import '../../../widgets/logo.dart';
 
+import '../../chapter_one/arrive_greece_screen/arrive_greece_screen.dart';
 import '../disclaimer/disclaimer.dart';
-import '../is_have_independent/is_have_independent.dart';
 
 class IsUserNameScreen extends StatelessWidget {
   const IsUserNameScreen({super.key});
@@ -55,7 +55,7 @@ class IsUserNameScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsHaveIndependentScreen(),
+                      const ArriveGreeceScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
