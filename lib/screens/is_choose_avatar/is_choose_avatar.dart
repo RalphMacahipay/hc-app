@@ -8,10 +8,10 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../is_choose_avatar/is_choose_avatar.dart';
+import '../how_old_screen/how_old_screen.dart';
 
-class IsHaveWifeScreen extends StatelessWidget {
-  const IsHaveWifeScreen({Key? key}) : super(key: key);
+class IsChooseAvatar extends StatelessWidget {
+  const IsChooseAvatar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,54 +33,55 @@ class IsHaveWifeScreen extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "Do you have your wife/husband, child, mother/father, in any of these countries (Dublin III country) and you wish to be reunited with him/her?",
+                "Please choose your avatar that will guide you through the asylum process.",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
             ),
-            CircleAvatar(
-              radius: 150,
-              backgroundColor: kWhite,
-              child: Image.asset(
-                kRefugeeFlag,
-                fit: BoxFit.cover,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  radius: 70,
+                  backgroundColor: kWhite,
+                  child: Image.asset(
+                    kAvatarOne,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 70,
+                  backgroundColor: kWhite,
+                  child: Image.asset(
+                    kAvatarTwo,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  radius: 70,
+                  backgroundColor: kWhite,
+                  child: Image.asset(
+                    kAvatarThree,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 70,
+                  backgroundColor: kWhite,
+                  child: Image.asset(
+                    kAvatarFour,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
-              height: SizeConfig.blockY! * 10,
-            ),
-            Consumer<SelectedNationality>(
-              builder: (context, selectedNationality, _) =>
-                  DropdownButton<String>(
-                hint: const Text('Select Nationality'),
-                value: selectedNationality.value,
-                onChanged: (String? newValue) {
-                  selectedNationality.value = newValue;
-                },
-                items: <String>[
-                  'Afghanistan',
-                  'Austria',
-                  'Belgium',
-                  // Add more nationalities as needed
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          // Add the appropriate image asset for each nationality
-                          getFlagAsset(
-                              value), // Example function to get the flag asset based on nationality
-                          height: 20,
-                          width: 30,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(value),
-                      ],
-                    ),
-                  );
-                }).toList(),
-              ),
+              height: SizeConfig.blockY! * 5,
             ),
             SizedBox(height: SizeConfig.blockY! * 5),
             WidgetElevatedButtonOne(
@@ -91,7 +92,7 @@ class IsHaveWifeScreen extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        const IsChooseAvatar(),
+                        const AskAgeScreen(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return FadeTransition(
