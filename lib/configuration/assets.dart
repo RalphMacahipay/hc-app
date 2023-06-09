@@ -11,3 +11,10 @@ const String kShipWreck = "assets/registration/images/ship_fam.png";
 const String kPersonDextrose = "assets/registration/images/person_dextrose.png";
 const String kTortureMan = "assets/registration/images/torture.png";
 const String kPersonTied = "assets/registration/images/person_tied.png";
+const String kRefugeeFlag = "assets/registration/images/refugee_flag.png";
+
+// flags
+const String kAfghanistan = "assets/registration/images/flags/Afghanistan.png";
+const String kAustria = "assets/registration/images/flags/Austria.png";
+const String kBelgium = "assets/registration/images/flags/Belgium.png";
+const String kBulgaria = "assets/registration/images/flags/Bulgaria.png";
