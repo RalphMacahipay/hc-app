@@ -7,10 +7,10 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../is_torture_screen/is_torture_screen.dart';
+import '../how_old_screen/how_old_screen.dart';
 
-class IsHIVScreen extends StatelessWidget {
-  const IsHIVScreen({super.key});
+class IsTortureScreen extends StatelessWidget {
+  const IsTortureScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class IsHIVScreen extends StatelessWidget {
           ),
           const Center(
             child: Text(
-              "Are you suffeing from a serious medical condition that requires assistance, in terms of treatment or provision of nutritional and non-food items, including diabetes, respiratory illness, cancer, tuberculosis, HIV/AIDS, heart disease, or acute malnutrition?",
+              "Are you a victim of torture, rape or other forms of psychological, physical, or sexual violence or exploitation?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -39,7 +39,7 @@ class IsHIVScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kPersonDextrose,
+              kTortureMan,
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +54,7 @@ class IsHIVScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsTortureScreen(),
+                      const AskAgeScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
