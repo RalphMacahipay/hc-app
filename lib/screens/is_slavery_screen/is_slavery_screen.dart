@@ -7,10 +7,10 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../is_slavery_screen/is_slavery_screen.dart';
+import '../how_old_screen/how_old_screen.dart';
 
-class IsTortureScreen extends StatelessWidget {
-  const IsTortureScreen({super.key});
+class IsSlaveryScreen extends StatelessWidget {
+  const IsSlaveryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class IsTortureScreen extends StatelessWidget {
           ),
           const Center(
             child: Text(
-              "Are you a victim of torture, rape or other forms of psychological, physical, or sexual violence or exploitation?",
+              "Are you a victim of human trafficking or slavery?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -39,7 +39,7 @@ class IsTortureScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kTortureMan,
+              kPersonTied,
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +54,7 @@ class IsTortureScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsSlaveryScreen(),
+                      const AskAgeScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

@@ -10,3 +10,4 @@ const String kManDisabled = "assets/registration/images/disabled_man.png";
 const String kShipWreck = "assets/registration/images/ship_fam.png";
 const String kPersonDextrose = "assets/registration/images/person_dextrose.png";
 const String kTortureMan = "assets/registration/images/torture.png";
+const String kPersonTied = "assets/registration/images/person_tied.png";
