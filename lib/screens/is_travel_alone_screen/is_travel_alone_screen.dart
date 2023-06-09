@@ -3,41 +3,14 @@ import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
 import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
 
-import '../../configuration/constant.dart';
 import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../how_old_screen/how_old_screen.dart';
+import '../is_pregnant_screen/is_pregnant_screen.dart';
 
-class IntroductionPage extends StatelessWidget {
-  final String logoImagePath;
-
-  const IntroductionPage({super.key, required this.logoImagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundColor: kWhite,
-            child: Image.asset(
-              logoImagePath,
-              fit: BoxFit.cover,
-            ),
-          ),
-          // Rest of the introduction page content
-        ],
-      ),
-    );
-  }
-}
-
-class IntroductionScreen extends StatelessWidget {
-  const IntroductionScreen({super.key});
+class IsTravelAloneScreen extends StatelessWidget {
+  const IsTravelAloneScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,37 +25,36 @@ class IntroductionScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         children: [
+          SizedBox(
+            height: SizeConfig.blockY! * 5,
+          ),
           const Center(
             child: Text(
-              "Introduction",
+              "Are you traveling alone or together with your family?",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
           ),
           CircleAvatar(
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kPersonQuestion,
+              kPersonAndFam,
               fit: BoxFit.cover,
             ),
           ),
-          const Text(
-            kAsking,
-            style: TextStyle(fontSize: 15),
-            textAlign: TextAlign.center,
-          ),
           SizedBox(
-            height: SizeConfig.blockY! * 10,
+            height: SizeConfig.blockY! * 18,
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "Confirm",
+            kName: "Yes",
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const AskAgeScreen(),
+                      const IsPregnantScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -98,7 +70,7 @@ class IntroductionScreen extends StatelessWidget {
           ),
           WidgetElevatedButtonOne(
             kColor: kOrange,
-            kName: "Go back",
+            kName: "No",
             onPressed: () {
               Navigator.pushReplacement(
                 context,

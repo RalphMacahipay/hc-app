@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/size.dart';
-
-import '../../configuration/assets.dart';
 import '../../configuration/constant.dart';
-import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
+import '../../widgets/logo.dart';
 import '../../widgets/text.dart';
+import '../introduction/introduction.dart';
 
 class DisclaimerScreen extends StatelessWidget {
-  const DisclaimerScreen({Key? key}) : super(key: key); // Add key parameter
+  const DisclaimerScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +16,7 @@ class DisclaimerScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: CircleAvatar(
-          radius: 40, // Adjust the size of the avatar
-          backgroundColor: kWhite, // Set the background color of the avatar
-          child: Image.asset(
-            kLogo, // Path to the logo image file
-            fit: BoxFit.cover, // Adjust the image fitting inside the circle
-          ),
-        ),
+        title: const AppbarLogoWidget(),
         backgroundColor: kWhite,
         elevation: 0,
       ),
@@ -51,12 +43,25 @@ class DisclaimerScreen extends StatelessWidget {
             kColor: kOrange,
             kName: "Proceed",
             onPressed: () {
-              Navigator.pushNamed(context, kIntroductionRoutes);
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const IntroductionScreen(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
             },
             suffixButton: const Icon(Icons.arrow_circle_right_sharp),
           ),
           const TextButtonWidget(
-            key: Key('textButtonWidget'), // Add key parameter
+            key: Key('textButtonWidget'),
           ),
         ],
       ),

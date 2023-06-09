@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hc_app_sample/provider/provider.dart';
 import 'package:hc_app_sample/screens/disclaimer/disclaimer.dart';
+import 'package:hc_app_sample/screens/how_old_screen/how_old_screen.dart';
 import 'package:hc_app_sample/screens/introduction/introduction.dart';
+import 'package:hc_app_sample/screens/is_travel_alone_screen/is_travel_alone_screen.dart';
 import 'package:hc_app_sample/screens/registration.dart';
+import 'package:provider/provider.dart';
 
 import 'configuration/routes.dart';
 
@@ -19,21 +23,16 @@ class MyApp extends StatelessWidget {
         kDisclaimerRoutes: (context) => const DisclaimerScreen(),
         kIndexScreenRoutes: (context) => const Registration(),
         kIntroductionRoutes: (context) => const IntroductionScreen(),
+        kAskingRoutes: (context) => const AskAgeScreen(),
+        kIsTravelAloneRoutes: (context) => const IsTravelAloneScreen(),
       },
       debugShowCheckedModeBanner: false,
-      home: const Registration(),
+      home: MultiProvider(providers: [
+        ChangeNotifierProvider(
+          create: (context) => ServicesProvider(),
+        ),
+      ], child: const Registration()),
     );
-  }
-}
-
-Route<dynamic>? generateRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case kIntroductionRoutes:
-      return MaterialPageRoute(
-          builder: (context) => const IntroductionScreen());
-    // Add other routes here
-    default:
-      return MaterialPageRoute(builder: (context) => const UnknownScreen());
   }
 }
 
