@@ -7,10 +7,10 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../how_old_screen/how_old_screen.dart';
+import '../is_have_older/is_have_older.dart';
 
-class IsPregnantScreen extends StatelessWidget {
-  const IsPregnantScreen({super.key});
+class IsHaveIndependentScreen extends StatelessWidget {
+  const IsHaveIndependentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class IsPregnantScreen extends StatelessWidget {
           const Center(
             child: Text(
               "Are you a single person of 18 years or above with one or more dependent(s), including at least 1 biological or non-biological child?",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
@@ -54,7 +54,7 @@ class IsPregnantScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const AskAgeScreen(),
+                      const IsHaveOlderScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
