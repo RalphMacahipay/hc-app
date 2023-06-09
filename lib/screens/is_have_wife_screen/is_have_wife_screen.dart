@@ -10,8 +10,8 @@ import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
 import '../how_old_screen/how_old_screen.dart';
 
-class IsNationalityScreen extends StatelessWidget {
-  const IsNationalityScreen({Key? key}) : super(key: key);
+class IsHaveWifeScreen extends StatelessWidget {
+  const IsHaveWifeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class IsNationalityScreen extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "What is your nationality?",
+                "Do you have your wife/husband, child, mother/father, in any of these countries (Dublin III country) and you wish to be reunited with him/her?",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),

@@ -8,7 +8,7 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../how_old_screen/how_old_screen.dart';
+import '../is_have_wife_screen/is_have_wife_screen.dart';
 
 class IsNationalityScreen extends StatelessWidget {
   const IsNationalityScreen({Key? key}) : super(key: key);
@@ -91,7 +91,7 @@ class IsNationalityScreen extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        const AskAgeScreen(),
+                        const IsHaveWifeScreen(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return FadeTransition(
