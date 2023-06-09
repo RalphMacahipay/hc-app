@@ -7,10 +7,10 @@ import '../../configuration/routes.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/logo.dart';
-import '../is_shipwreck_screen/is_shipwreck_screen.dart';
+import '../how_old_screen/how_old_screen.dart';
 
-class IsSufferScreen extends StatelessWidget {
-  const IsSufferScreen({super.key});
+class IsShipWreckScreen extends StatelessWidget {
+  const IsShipWreckScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class IsSufferScreen extends StatelessWidget {
           ),
           const Center(
             child: Text(
-              "Are you suffeing from a physical, mental, intellectual, or sensory disability from birth?",
+              "Are you suffeing from a physical, mental, intellectual, or sensory disability resulting from illness, infection, injury, or trauma, especially if you are a shipwreck survivor or relatives of a shipwreck victim?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -39,7 +39,7 @@ class IsSufferScreen extends StatelessWidget {
             radius: 150,
             backgroundColor: kWhite,
             child: Image.asset(
-              kManDisabled,
+              kShipWreck,
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +54,7 @@ class IsSufferScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsShipWreckScreen(),
+                      const AskAgeScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
