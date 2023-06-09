@@ -16,12 +16,15 @@ class DisclaimerScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        actions: const [
-          Text(
-            "testing",
-            style: TextStyle(color: Colors.amber),
-          )
-        ],
+        centerTitle: true,
+        title: CircleAvatar(
+          radius: 40, // Adjust the size of the avatar
+          backgroundColor: kWhite, // Set the background color of the avatar
+          child: Image.asset(
+            kLogo, // Path to the logo image file
+            fit: BoxFit.cover, // Adjust the image fitting inside the circle
+          ),
+        ),
         backgroundColor: kWhite,
         elevation: 0,
       ),
@@ -29,14 +32,6 @@ class DisclaimerScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockX! * 2),
         children: [
-          CircleAvatar(
-            radius: 40, // Adjust the size of the avatar
-            backgroundColor: kWhite, // Set the background color of the avatar
-            child: Image.asset(
-              kLogo, // Path to the logo image file
-              fit: BoxFit.cover, // Adjust the image fitting inside the circle
-            ),
-          ),
           SizedBox(height: SizeConfig.blockY! * 1),
           const TextWidget(
             kString: "Disclaimer",
@@ -63,33 +58,6 @@ class DisclaimerScreen extends StatelessWidget {
           const TextButtonWidget(
             key: Key('textButtonWidget'), // Add key parameter
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class TextButtonWidget extends StatelessWidget {
-  const TextButtonWidget({
-    Key? key, // Add key parameter
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamedAndRemoveUntil(
-            context, kIndexScreenRoutes, (route) => false);
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(Icons.arrow_circle_left_sharp),
-          SizedBox(width: SizeConfig.blockY! * 1),
-          const TextWidget(
-              kString: "Go back to home screen",
-              kFontSize: 15,
-              kTextAlign: TextAlign.center)
         ],
       ),
     );

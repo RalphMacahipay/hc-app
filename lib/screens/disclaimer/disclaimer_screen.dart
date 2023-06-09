@@ -7,7 +7,6 @@ import '../../configuration/size.dart';
 import '../../configuration/style.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/text.dart';
-import 'disclaimer.dart';
 
 class DisclaimerScreenHere extends StatelessWidget {
   const DisclaimerScreenHere({super.key});

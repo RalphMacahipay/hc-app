@@ -25,3 +25,28 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+Route<dynamic>? generateRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case kIntroductionRoutes:
+      return MaterialPageRoute(
+          builder: (context) => const IntroductionScreen());
+    // Add other routes here
+    default:
+      return MaterialPageRoute(builder: (context) => const UnknownScreen());
+  }
+}
+
+class UnknownScreen extends StatefulWidget {
+  const UnknownScreen({super.key});
+
+  @override
+  State<UnknownScreen> createState() => _UnknownScreenState();
+}
+
+class _UnknownScreenState extends State<UnknownScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

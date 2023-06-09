@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hc_app_sample/widgets/text.dart';
 
 import '../configuration/fonts.dart';
+import '../configuration/routes.dart';
+import '../configuration/size.dart';
 import '../configuration/style.dart';
 
 // BUTTON WIDGET ONE
@@ -79,6 +82,33 @@ class WidgetElevatedButtonOne extends StatelessWidget {
           suffixButton ??
               const SizedBox
                   .shrink(), // Display the suffix button or an empty SizedBox
+        ],
+      ),
+    );
+  }
+}
+
+class TextButtonWidget extends StatelessWidget {
+  const TextButtonWidget({
+    Key? key, // Add key parameter
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamedAndRemoveUntil(
+            context, kIndexScreenRoutes, (route) => false);
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(Icons.arrow_circle_left_sharp),
+          SizedBox(width: SizeConfig.blockY! * 1),
+          const TextWidget(
+              kString: "Go back to home screen",
+              kFontSize: 15,
+              kTextAlign: TextAlign.center)
         ],
       ),
     );
