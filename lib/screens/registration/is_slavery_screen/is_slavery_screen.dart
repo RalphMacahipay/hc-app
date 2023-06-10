@@ -54,7 +54,7 @@ class IsSlaveryScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsNationalityScreen(),
+                      IsNationalityScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -76,7 +76,7 @@ class IsSlaveryScreen extends StatelessWidget {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const IsNationalityScreen(),
+                      IsNationalityScreen(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(

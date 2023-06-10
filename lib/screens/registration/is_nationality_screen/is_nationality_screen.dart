@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hc_app_sample/configuration/assets.dart';
 import 'package:hc_app_sample/configuration/size.dart';
 import 'package:provider/provider.dart';
-
+import 'package:get/get.dart';
 import '../../../configuration/routes.dart';
 import '../../../configuration/style.dart';
+import '../../../get/get.dart';
 import '../../../provider/provider_nationality.dart';
 import '../../../widgets/buttons.dart';
 import '../../../widgets/logo.dart';
@@ -13,8 +14,8 @@ import '../disclaimer/disclaimer.dart';
 import '../is_have_wife_screen/is_have_wife_screen.dart';
 
 class IsNationalityScreen extends StatelessWidget {
-  const IsNationalityScreen({Key? key}) : super(key: key);
-
+  IsNationalityScreen({Key? key}) : super(key: key);
+  final GetDropDownController getController = Get.put(GetDropDownController());
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -51,6 +52,39 @@ class IsNationalityScreen extends StatelessWidget {
             SizedBox(
               height: SizeConfig.blockY! * 10,
             ),
+            // GetBuilder<GetDropDownController>(
+            //   builder: (controller) {
+            //     return DropdownButton<String>(
+            //       hint: const Text('Select Nationality'),
+            //       value: null,
+            //       onChanged: (value) => controller.setSelectedValue(value!),
+            //       items: <String>[
+            //         'Afghanistan',
+            //         'Austria',
+            //         'Belgium',
+            //         // Add more nationalities as needed
+            //       ].map<DropdownMenuItem<String>>((String value) {
+            //         return DropdownMenuItem<String>(
+            //           value: value,
+            //           child: Row(
+            //             children: [
+            //               Image.asset(
+            //                 // Add the appropriate image asset for each nationality
+            //                 getFlagAsset(
+            //                     value), // Example function to get the flag asset based on nationality
+            //                 height: 20,
+            //                 width: 30,
+            //               ),
+            //               const SizedBox(width: 10),
+            //               Text(value),
+            //             ],
+            //           ),
+            //         );
+            //       }).toList(),
+            //     );
+            //   },
+            // ),
+
             Consumer<SelectedNationality>(
               builder: (context, selectedNationality, _) =>
                   DropdownButton<String>(
@@ -84,6 +118,7 @@ class IsNationalityScreen extends StatelessWidget {
                 }).toList(),
               ),
             ),
+
             SizedBox(height: SizeConfig.blockY! * 5),
             WidgetElevatedButtonOne(
               kColor: kOrange,
